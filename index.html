@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLI Portfolio - Developer Terminal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="terminal-window crt-effect">
+        <!-- Header Jendela Terminal -->
+        <div class="terminal-header">
+            <div class="buttons">
+                <span class="btn close"></span>
+                <span class="btn minimize"></span>
+                <span class="btn maximize"></span>
+            </div>
+            <div class="title">visitor@portfolio:~ (zsh)</div>
+        </div>
+
+        <!-- Konten Utama Terminal -->
+        <div class="terminal-body" id="terminalBody">
+            <div class="welcome-msg">
+                <p class="accent-text">🚀 Welcome to interactive CLI portfolio v2.0.0</p>
+                <p>Ketik <span class="command-hint">'help'</span> untuk melihat daftar perintah yang tersedia.</p>
+                <br>
+            </div>
+            
+            <div id="history"></div>
+
+            <div class="input-container">
+                <span class="prompt">visitor@portfolio:~$</span>
+                <div class="input-wrapper">
+                    <!-- Teks bayangan (Ghost Text) untuk autocomplete -->
+                    <span id="ghostInput" class="ghost-text"></span>
+                    <input type="text" id="userInput" autofocus autocomplete="off" spellcheck="false">
+                </div>
+            </div>
+        </div>
+
+        <!-- Status Bar di Bagian Bawah -->
+        <div class="terminal-status-bar">
+            <span class="status-item"><span class="dot-online"></span> ONLINE</span>
+            <span class="status-item" id="clock">00:00:00</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

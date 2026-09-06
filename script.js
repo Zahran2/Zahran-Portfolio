@@ -50,7 +50,7 @@ const commands = {
     about: "Halo! Saya seorang Fullstack Developer yang hobi mengeksplorasi berbagai teknologi baru. Memiliki pengalaman kuat dalam membangun aplikasi web secara menyeluruh, serta gemar menuangkan kreativitas ke dalam pengembangan game.",
     skills: "Tech Stack & Role Expertise:\n\n> Frontend & Mobile Development\n- React, Vue.js, JavaScript, HTML/CSS\n- UI/UX Design, Mobile App (Flutter)\n\n> Backend & System Architecture\n- Node.js (Express), PHP (Laravel)\n- Java, C/C++\n- RESTful APIs, Microservices, Kafka\n\n> Data Science & Artificial Intelligence\n- Python, Computer Vision (Deepfake & Object Detection)\n- Data Prep, Matplotlib, PowerBI\n- Web Scraping & RPA (Selenium, BeautifulSoup, UiPath)\n\n> DevOps, Infrastructure & QA\n- Docker, Kubernetes, Git, CI/CD Pipeline\n- QA Automation & Testing (Selenium, JUnit)\n\n> Databases & Game Development\n- SQL (Relational) & NoSQL (MongoDB, Graph DB)\n- Game Engines & Libraries (Unity, Godot, Phaser.js)",
     projects: "Featured Projects:\n1. Interactive CLI Portfolio - Web CV berbasis terminal (Proyek ini).\n2. Sistem Backend Lainnya - Proyek sistem kustom.",
-    contact: "Let's Connect:\n- Email: <a href='mailto:zahrananugerah1@gmail.com' target='_blank' style='color: #58a6ff; text-decoration: underline;'>zahrananugerah1@gmail.com</a>\n- LinkedIn: <a href='https://linkedin.com/in/zahran-anugerah-rizqullah/' target='_blank' style='color: #58a6ff; text-decoration: underline;'>linkedin.com/in/zahran-anugerah-rizqullah/</a>\n- GitHub: <a href='https://github.com/Zahran2' target='_blank' style='color: #58a6ff; text-decoration: underline;'>github.com/Zahran2</a>"
+    contact: "Let's Connect:\n- Email: zahrananugerah1@gmail.com\n- LinkedIn: linkedin.com/in/zahran-anugerah-rizqullah/\n- GitHub: github.com/Zahran2"
 };
 
 const allCommands = [...Object.keys(commands), 'clear'];
@@ -64,7 +64,6 @@ function updateGhostText() {
     }
     let match = allCommands.find(cmd => cmd.startsWith(val) && cmd !== val);
     if (match) {
-        // Tampilkan sisa teks yang belum diketik user secara redup
         ghostInput.textContent = userInput.value + match.slice(val.length);
     } else {
         ghostInput.textContent = '';
@@ -90,6 +89,13 @@ function typeWriter(text, element, speed = 25, callback) {
             terminalBody.scrollTop = terminalBody.scrollHeight;
             setTimeout(typing, speed);
         } else {
+            // Setelah efek ketik selesai, jika ini command contact, ubah teks email/link jadi tag <a> yang bisa diklik
+            if (text.includes('zahrananugerah1@gmail.com')) {
+                element.innerHTML = element.innerHTML
+                    .replace('zahrananugerah1@gmail.com', "<a href='mailto:zahrananugerah1@gmail.com' target='_blank' style='color: #58a6ff; text-decoration: underline;'>zahrananugerah1@gmail.com</a>")
+                    .replace('linkedin.com/in/zahran-anugerah-rizqullah/', "<a href='https://linkedin.com/in/zahran-anugerah-rizqullah/' target='_blank' style='color: #58a6ff; text-decoration: underline;'>linkedin.com/in/zahran-anugerah-rizqullah/</a>")
+                    .replace('github.com/Zahran2', "<a href='https://github.com/Zahran2' target='_blank' style='color: #58a6ff; text-decoration: underline;'>github.com/Zahran2</a>");
+            }
             isTyping = false;
             userInput.disabled = false;
             userInput.focus();

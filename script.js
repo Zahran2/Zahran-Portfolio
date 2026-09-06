@@ -47,7 +47,7 @@ terminalBody.addEventListener('click', () => {
 
 const commands = {
     help: "Perintah tersedia:\n- about: Ringkasan profil\n- skills: Daftar keahlian & tech stack\n- projects: Portofolio proyek\n- contact: Kontak & sosial media\n- clear: Bersihkan layar",
-    about: "Halo! Saya seorang Software Engineer/Developer yang berfokus pada pengembangan sistem, penulisan kode yang bersih, dan eksplorasi teknologi modern.",
+    about: "Halo! Saya seorang Fullstack Developer yang hobi mengeksplorasi berbagai teknologi baru. Memiliki pengalaman kuat dalam membangun aplikasi web secara menyeluruh, serta gemar menuangkan kreativitas ke dalam pengembangan game.",
     skills: "Tech Stack & Tools:\n- Languages: JavaScript, Python, PHP, SQL\n- Frameworks: React, Node.js, Express\n- Tools & OS: Git, GitHub, Linux, Docker, VS Code",
     projects: "Featured Projects:\n1. Interactive CLI Portfolio - Web CV berbasis terminal (Proyek ini).\n2. Sistem Backend Lainnya - Proyek sistem kustom.",
     contact: "Let's Connect:\n- Email: emailanda@domain.com\n- LinkedIn: linkedin.com/in/username\n- GitHub: github.com/username"
